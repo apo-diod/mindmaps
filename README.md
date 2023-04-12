@@ -1,7 +1,7 @@
 # PSA: This project is not actively maintained. I consider it feature complete for what it set out to do. I'll fix critical bugs should they pop up but I won't be adding new features.
 
 
-# mindmaps(forked)
+# mindmaps
 mindmaps is a HTML5 based mind mapping application. It lets you create neat looking mind maps in the browser.
 
 This project started in 2011 as an exploration into what's possible to do in browsers using modern APIs. Nowadays, most of this stuff is pretty common and the code base is a bit outdated. This was way before React, ES6, webpack. Heck, it doesn't even use Backbone.
