@@ -10,4 +10,6 @@ FROM nginx:1.23.4
 
 COPY --from=build /build/dist /usr/share/nginx/html
 
+EXPOSE 80
+
 RUN sed '$d' /etc/ngninx/mime.types && printf "\ttext/cache-manifest\tappcache;\n}"
