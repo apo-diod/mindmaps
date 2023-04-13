@@ -12,4 +12,4 @@ COPY --from=build /build/dist /usr/share/nginx/html
 
 EXPOSE 80
 
-RUN sed -i '$d' /etc/nginx/mime.types && printf "\ttext/cache-manifest\tappcache;\n}"
+RUN sed -i '$d' /etc/nginx/mime.types && printf "\ttext/cache-manifest\tappcache;\n}" >> /etc/nginx/mime.types
