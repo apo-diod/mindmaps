@@ -10,6 +10,4 @@ FROM nginx:1.23.4
 
 COPY --from=build /build/dist /usr/share/nginx/html
 
-EXPOSE 8080
-
 RUN sed -i 's/^types {/types {\n    text\/cache-manifest appcache;/' /etc/nginx/mime.types
