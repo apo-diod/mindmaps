@@ -1,11 +1,13 @@
-FROM node:19-alpine3.16
+FROM node:19-alpine3.16 as build
 
-WORKDIR /app
+WORKDIR /build
 
 COPY . ./
 
-RUN npm install
+RUN npm install && npm run build
 
-EXPOSE 3000
+FROM nginx:1.23.4
 
-CMD ["npm", "run", "start"]
+COPY --from=build /build/dist /usr/share/nginx/html
+
+RUN sed '$d' /etc/ngninx/mime.types && printf "\ttext/cache-manifest\tappcache;\n}"
