@@ -1,4 +1,4 @@
-FROM node:19-alpine3.16 as build
+FROM node:18.12.1 as build
 
 WORKDIR /build
 
@@ -6,7 +6,7 @@ COPY . ./
 
 RUN npm install && npm run build
 
-FROM nginx:1.23.4
+FROM nginx:1.22.1
 
 COPY --from=build /build/dist /usr/share/nginx/html
 
